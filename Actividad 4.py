@@ -104,6 +104,7 @@ print(f"Propina: Q{propina}")
 print(f"Descuento: Q{descuento}")
 print(f"Total: Q{total}")
 # Verificador de fecha válida con día de la semana
+print("BIENVENID@ AL VERIFICADOR DE FECHAS VÁLIDAS")
 d = int(input("Día: "))
 m = int(input("Mes: "))
 a = int(input("Año: "))
@@ -119,3 +120,26 @@ j = a // 100
 h = (q + (13*(m + 1)) // 5 + k + (k // 4) + (j // 4) + 5 * j) % 7
 dias = ["Sábado", "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
 print("La fecha ingresada fue un", dias[h])
+# Clasificador de envío con múltiples condiciones
+print(f"BIENVENID@ AL SISTEMA DE ENVÍO \n Por favor ingrese los datos que se le solicitan")
+peso = float(input("Ingrese el peso del paquete en kg: "))
+distancia = float(input("Ingrese la distancia en km: "))
+urgente = input(f"¿Su envio es urgente? \n1.- Sí \n2.- No \nEscriba el número de la opcíon que desea: ")
+tamaño = input("Ingrese el tamaño del paquete (pequeño/mediano/grande): ")
+costo_base = peso * 5 + distancia * 0.1
+recargo_urgente = 0
+if urgente == "1":
+    recargo_urgente = 50
+recargo_tamaño = 0
+if tamaño.lower() == "grande":
+    recargo_tamaño = 30
+descuento = 0
+if urgente == "2" and peso < 5:
+    descuento = 20
+total = costo_base + recargo_urgente + recargo_tamaño - descuento
+print("DESGLOSE DEL ENVÍO")
+print(f"Costo base: Q{round(costo_base, 2)}")
+print(f"Recargo por urgencia: Q{recargo_urgente}")
+print(f"Recargo por tamaño: Q{recargo_tamaño}")
+print(f"Descuento aplicado: Q{descuento}")
+print(f"Total a pagar: Q{round(total, 2)}")
