@@ -169,3 +169,35 @@ print("RESULTADOS")
 for i in range(5):
     promedio = (notas[i][0] + notas[i][1] + notas[i][2]) / 3
     print(f"{nombres[i]} - Promedio final: {round(promedio, 2)}")
+# Calculadora de rumbo entre puntos cardinales
+print("BIENVENID@ A LA CALCULADORA DE RUMBO ENTRE PUNTOS CARDINALES")
+punto_inicio = input("Ingrese el punto desde el que parte (norte, sur, este, oeste): ")
+punto_final = input("Ingrese el punto al que se dirige (norte, sur, este, oeste): ")
+if punto_inicio.lower() == "sur" and punto_final.lower() == "norte":
+    print("Dirigirse recto hacia el norte")
+elif punto_inicio.lower() == "sur" and punto_final.lower() == "este":
+    print("Dirigirse hacia el sureste")
+elif punto_inicio.lower() == "sur" and punto_final.lower() == "oeste":
+    print("Dirigirse hacia el suroeste")
+elif punto_inicio.lower() == "norte" and punto_final.lower() == "sur":
+    print("Dirigirse recto hacia el sur")
+elif punto_inicio.lower() == "norte" and punto_final.lower() == "este":
+    print("Dirigirse hacia el noreste")
+elif punto_inicio.lower() == "norte" and punto_final.lower() == "oeste":
+    print("Dirigirse hacia el noroeste")
+elif punto_inicio.lower() == "este" and punto_final.lower() == "sur":
+    print("Dirigirse hacia el sureste")
+elif punto_inicio.lower() == "este" and punto_final.lower() == "norte":
+    print("Dirigirse hacia el noreste")
+elif punto_inicio.lower() == "este" and punto_final.lower() == "oeste":
+    print("Dirigirse recto hacia el oeste")
+elif punto_inicio.lower() == "oeste" and punto_final.lower() == "sur":
+    print("Dirigirse hacia el suroeste")
+elif punto_inicio.lower() == "oeste" and punto_final.lower() == "norte":
+    print("Dirigirse hacia el noroeste")
+elif punto_inicio.lower() == "oeste" and punto_final.lower() == "este":
+    print("Dirigirse recto hacia el este")
+elif punto_inicio == punto_final:
+    print("El punto inicial es el mismo al final")
+else:
+    print("Dirección inválida")
