@@ -103,3 +103,19 @@ print(f"IVA: Q{iva}")
 print(f"Propina: Q{propina}")
 print(f"Descuento: Q{descuento}")
 print(f"Total: Q{total}")
+# Verificador de fecha válida con día de la semana
+d = int(input("Día: "))
+m = int(input("Mes: "))
+a = int(input("Año: "))
+if m == 1:
+    m = 13
+    a = a - 1
+if m == 2:
+    m = 14
+    a = a - 1
+q = d
+k = a % 100
+j = a // 100
+h = (q + (13*(m + 1)) // 5 + k + (k // 4) + (j // 4) + 5 * j) % 7
+dias = ["Sábado", "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
+print("La fecha ingresada fue un", dias[h])
