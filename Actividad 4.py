@@ -22,6 +22,7 @@ else:
             departamento = input("Ingrese su departamento: ")
             print(f"Bienvenid@ {nombre_completo}, su centro de votación está en {departamento}")
 # Calculadora de impuestos progresivos + deducciones
+print("BIENVENID@")
 ingreso = float(input("Ingrese ingreso anual: Q"))
 dependientes = int(input("Cantidad de dependientes: "))
 deduccion = dependientes * 1000
@@ -38,6 +39,7 @@ if ingreso >= 40000 or dependientes <= 2:
     if neto > 100000:
         print("Debe pagar Q" + str(neto * 0.20))
 # Sistema de autenticación avanzado con penalización
+print("BIENVENID@ AL SISTEMA")
 usuario = input("Ingrese el suario: ")
 contra = input("Ingrese la contraseña: ")
 if usuario == "karla" and contra == "1234":
@@ -77,3 +79,27 @@ if not ((usuario == "karla" and contra == "1234") or (usuario == "maria" and con
             print("1.- Ver perfil\n2.- Cambiar contraseña\n3.- Cerrar sesión")
         if not ((usuario3 == "karla" and contra3 == "1234") or (usuario3 == "maria" and contra3 == "abcd") or (usuario3 == "pedro" and contra3 == "5678")):
             print("ACCESO BLOQUEADO")
+# Simulador de facturación con IVA, descuentos y propina
+print("BIENVENID@")
+cantidad_productos = int(input("Por favor ingrese la cantidad de productos que lleva: "))
+st = 0
+for i in range(cantidad_productos):
+    precios = float(input(f"Ingresa el precio del producto {i+1}: Q"))
+    subtotal = st + precios
+    iva = subtotal * 0.12
+    propina = 0
+    resp_propina = input(f"¿Desea agregar propina? \n1.- Si \n2.- No: ")
+    if resp_propina == 1:
+        porcentaje = int(input("¿Cuánto porcentaje de propina dará?: "))
+        propina = subtotal * (porcentaje / 100)
+    descuento = 0
+    resp_descuento = input(f"¿Cuenta con una trajeta de cliente frecuente? \n1.Sí \n2.- No")
+    if resp_descuento == 1:
+        descuento = subtotal * 0.10
+    total = (subtotal + iva + propina) - descuento
+    print("DETALLES DE LA FACTURA")
+    print(f"Subtotal: Q{subtotal}")
+    print(f"IVA: Q{iva}")
+    print(f"Propina: Q{propina}")
+    print(f"Descuento: Q{descuento}")
+    print(f"Total: Q{total}")
