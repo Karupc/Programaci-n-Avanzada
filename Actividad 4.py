@@ -26,7 +26,6 @@ ingreso = float(input("Ingrese ingreso anual: Q"))
 dependientes = int(input("Cantidad de dependientes: "))
 deduccion = dependientes * 1000
 neto = ingreso - deduccion
-
 if ingreso < 40000 and dependientes > 2:
     print("No paga impuestos.")
 if ingreso >= 40000 or dependientes <= 2:
@@ -38,3 +37,43 @@ if ingreso >= 40000 or dependientes <= 2:
         print("Debe pagar Q" + str(neto * 0.15))
     if neto > 100000:
         print("Debe pagar Q" + str(neto * 0.20))
+# Sistema de autenticación avanzado con penalización
+usuario = input("Ingrese el suario: ")
+contra = input("Ingrese la contraseña: ")
+if usuario == "karla" and contra == "1234":
+    print("Acceso concedido")
+    print("1.- Ver perfil\n2.- Cambiar contraseña\n3.- Cerrar sesión")
+if usuario == "maria" and contra == "abcd":
+    print("Acceso concedido")
+    print("1.- Ver perfil\n2.- Cambiar contraseña\n3.- Cerrar sesión")
+if usuario == "pedro" and contra == "5678":
+    print("Acceso concedido")
+    print("1.- Ver perfil\n2.- Cambiar contraseña\n3.- Cerrar sesión")
+if not ((usuario == "karla" and contra == "1234") or (usuario == "maria" and contra == "abcd") or (usuario == "pedro" and contra == "5678")):
+    print("Intento 2")
+    usuario2 = input("Ingrese el usuario: ")
+    contra2 = input("Ingrese la contraseña: ")
+    if usuario2 == "karla" and contra2 == "1234":
+        print("Acceso concedido")
+        print("1.- Ver perfil\n2.- Cambiar contraseña\n3.- Cerrar sesión")
+    if usuario2 == "maria" and contra2 == "abcd":
+        print("Acceso concedido")
+        print("1.- Ver perfil\n2.- Cambiar contraseña\n3.- Cerrar sesión")
+    if usuario2 == "pedro" and contra2 == "5678":
+        print("Acceso concedido")
+        print("1.- Ver perfil\n2.- Cambiar contraseña\n3.- Cerrar sesión")
+    if not ((usuario2 == "karla" and contra2 == "1234") or (usuario2 == "maria" and contra2 == "abcd") or (usuario2 == "pedro" and contra2 == "5678")):
+        print("Intento 3")
+        usuario3 = input("Ingrese el usuario: ")
+        contra3 = input("Ingrese la contraseña: ")
+        if usuario3 == "karla" and contra3 == "1234":
+            print("Acceso concedido")
+            print("1.- Ver perfil\n2.- Cambiar contraseña\n3.- Cerrar sesión")
+        if usuario3 == "maria" and contra3 == "abcd":
+            print("Acceso concedido")
+            print("1.- Ver perfil\n2.- Cambiar contraseña\n3.- Cerrar sesión")
+        if usuario3 == "pedro" and contra3 == "pass":
+            print("Acceso concedido")
+            print("1.- Ver perfil\n2.- Cambiar contraseña\n3.- Cerrar sesión")
+        if not ((usuario3 == "karla" and contra3 == "1234") or (usuario3 == "maria" and contra3 == "abcd") or (usuario3 == "pedro" and contra3 == "5678")):
+            print("ACCESO BLOQUEADO")
