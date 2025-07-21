@@ -40,7 +40,7 @@ if ingreso >= 40000 or dependientes <= 2:
         print("Debe pagar Q" + str(neto * 0.20))
 # Sistema de autenticación avanzado con penalización
 print("BIENVENID@ AL SISTEMA")
-usuario = input("Ingrese el suario: ")
+usuario = input("Ingrese el usuario: ")
 contra = input("Ingrese la contraseña: ")
 if usuario == "karla" and contra == "1234":
     print("Acceso concedido")
@@ -86,20 +86,20 @@ st = 0
 for i in range(cantidad_productos):
     precios = float(input(f"Ingresa el precio del producto {i+1}: Q"))
     subtotal = st + precios
-    iva = subtotal * 0.12
-    propina = 0
-    resp_propina = input(f"¿Desea agregar propina? \n1.- Si \n2.- No: ")
-    if resp_propina == 1:
-        porcentaje = int(input("¿Cuánto porcentaje de propina dará?: "))
-        propina = subtotal * (porcentaje / 100)
-    descuento = 0
-    resp_descuento = input(f"¿Cuenta con una trajeta de cliente frecuente? \n1.Sí \n2.- No")
-    if resp_descuento == 1:
-        descuento = subtotal * 0.10
-    total = (subtotal + iva + propina) - descuento
-    print("DETALLES DE LA FACTURA")
-    print(f"Subtotal: Q{subtotal}")
-    print(f"IVA: Q{iva}")
-    print(f"Propina: Q{propina}")
-    print(f"Descuento: Q{descuento}")
-    print(f"Total: Q{total}")
+iva = subtotal * 0.12
+propina = 0
+resp_propina = input(f"¿Desea agregar propina? \n1.- Si \n2.- No \nEscriba el número de la opción que desea:  ")
+if resp_propina == "1":
+    porcentaje = int(input("¿Cuánto porcentaje de propina dará?: "))
+    propina = subtotal * (porcentaje / 100)
+descuento = 0
+resp_descuento = input(f"¿Cuenta con una trajeta de cliente frecuente? \n1.- Sí \n2.- No \n Escriba el número de la opción que desea: ")
+if resp_descuento == "1":
+    descuento = subtotal * 0.10
+total = (subtotal + iva + propina) - descuento
+print("DETALLES DE LA FACTURA")
+print(f"Subtotal: Q{subtotal}")
+print(f"IVA: Q{iva}")
+print(f"Propina: Q{propina}")
+print(f"Descuento: Q{descuento}")
+print(f"Total: Q{total}")
