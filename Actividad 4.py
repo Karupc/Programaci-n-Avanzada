@@ -143,3 +143,29 @@ print(f"Recargo por urgencia: Q{recargo_urgente}")
 print(f"Recargo por tamaño: Q{recargo_tamaño}")
 print(f"Descuento aplicado: Q{descuento}")
 print(f"Total a pagar: Q{round(total, 2)}")
+# Sistema de calificaciones con curva
+nombres = []
+notas = []
+for i in range(5):
+    nombre = input(f"Ingrese el nombre del estudiante {i + 1}: ")
+    nota1 = float(input("Nota 1: "))
+    nota2 = float(input("Nota 2: "))
+    nota3 = float(input("Nota 3: "))
+    nombres.append(nombre)
+    notas.append([nota1, nota2, nota3])
+todos_bajos = True
+for n in notas:
+    promedio = (n[0] + n[1] + n[2]) / 3
+    if promedio >= 70:
+        todos_bajos = False
+if todos_bajos:
+    for i in range(5):
+        for j in range(3):
+            if notas[i][j] + 5 > 100:
+                notas[i][j] = 100
+            else:
+                notas[i][j] = notas[i][j] + 5
+print("RESULTADOS")
+for i in range(5):
+    promedio = (notas[i][0] + notas[i][1] + notas[i][2]) / 3
+    print(f"{nombres[i]} - Promedio final: {round(promedio, 2)}")
