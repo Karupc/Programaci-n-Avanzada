@@ -21,3 +21,20 @@ else:
         else:
             departamento = input("Ingrese su departamento: ")
             print(f"Bienvenid@ {nombre_completo}, su centro de votación está en {departamento}")
+# Calculadora de impuestos progresivos + deducciones
+ingreso = float(input("Ingrese ingreso anual: Q"))
+dependientes = int(input("Cantidad de dependientes: "))
+deduccion = dependientes * 1000
+neto = ingreso - deduccion
+
+if ingreso < 40000 and dependientes > 2:
+    print("No paga impuestos.")
+if ingreso >= 40000 or dependientes <= 2:
+    if neto <= 30000:
+        print("Debe pagar Q" + str(neto * 0.05))
+    if neto > 30000 and neto <= 60000:
+        print("Debe pagar Q" + str(neto * 0.10))
+    if neto > 60000 and neto <= 100000:
+        print("Debe pagar Q" + str(neto * 0.15))
+    if neto > 100000:
+        print("Debe pagar Q" + str(neto * 0.20))
