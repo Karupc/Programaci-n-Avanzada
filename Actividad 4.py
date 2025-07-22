@@ -201,3 +201,21 @@ elif punto_inicio == punto_final:
     print("El punto inicial es el mismo al final")
 else:
     print("Dirección inválida")
+# Simulador de entradas al cine con validación múltiple
+print(f"BIENVENID@ AL SISTEMA DE ENTRADAS AL CINE \nPor favor ingrese los datos que se le solicitan")
+edad = int(input("Ingrese su edad: "))
+dia = input("¿Qué día de la semana es? ").lower()
+estudiante = input(f"¿Es estudiante? \n1.- Sí \n2.- No \nIngrese el número de la opción que desea elegie")
+clasificacion = int(input("¿Qué clasificación tiene la película? (Ej. 13, 15, 18): "))
+if edad < 13 and clasificacion > 13:
+    print("No puede ver esta película por su edad.")
+else:
+    if estudiante == "1":
+        precio = 35
+    else:
+        precio = 50
+    if dia.lower() == "miércoles" or dia.lower() == "miercoles":
+        print("Hoy es miércoles. ¡Promoción 2x1!")
+        print(f"Precio total por 2 personas: Q{precio}")
+    else:
+        print(f"Precio total: Q{precio}")
