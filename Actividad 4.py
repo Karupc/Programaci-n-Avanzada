@@ -219,3 +219,34 @@ else:
         print(f"Precio total por 2 personas: Q{precio}")
     else:
         print(f"Precio total: Q{precio}")
+# Comparador de fechas (tipo calendario digital)
+dia1 = int(input("Ingrese el día de la primera fecha: "))
+mes1 = int(input("Ingrese el mes de la primera fecha: "))
+año1 = int(input("Ingrese el año de la primera fecha: "))
+dia2 = int(input("Ingrese el día de la segunda fecha: "))
+mes2 = int(input("Ingrese el mes de la segunda fecha: "))
+año2 = int(input("Ingrese el año de la segunda fecha: "))
+if año1 > año2:
+    print("La primera fecha es mayor.")
+elif año2 > año1:
+    print("La segunda fecha es mayor.")
+else:
+    if mes1 > mes2:
+        print("La primera fecha es mayor.")
+    elif mes2 > mes1:
+        print("La segunda fecha es mayor.")
+    else:
+        if dia1 > dia2:
+            print("La primera fecha es mayor.")
+        elif dia2 > dia1:
+            print("La segunda fecha es mayor.")
+        else:
+            print("Ambas fechas son iguales.")
+if mes1 == mes2 and año1 == año2:
+    print("Están en el mismo mes y año.")
+else:
+    print("No están en el mismo mes y año.")
+dias1 = dia1 + mes1 * 30 + año1 * 365
+dias2 = dia2 + mes2 * 30 + año2 * 365
+diferencia = abs(dias1 - dias2)
+print(f"Han pasado {diferencia} días entre ambas fechas aproximadamente")
