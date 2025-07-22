@@ -9,3 +9,4 @@ match opciones:
             producto = input("Ingrese el producto")
             venta = int(input("Ingrese eL valor de la venta en enteros positivos: Q"))
             ventass.appent(producto, venta)
+
